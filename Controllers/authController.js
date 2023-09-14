@@ -4,7 +4,8 @@ const appError = require('../Utils/globalErrorHandler')
 const crypto = require('crypto');
 const { promisify } = require('util');
 const User = require('./../Models/userModel')
-const catchAsync = require('../Utils/catchAsync')
+const catchAsync = require('../Utils/catchAsync');
+const { userInfo } = require('os');
 
 const signToken = id => {
     return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -26,16 +27,20 @@ const signToken = id => {
   
     // Remove password from output
     user.password = undefined;
-  
-    res.status(statusCode).json({
+    res.status(statusCode)
+    .json({
       status: 'success',
       token,
       data: {
         user
       }
-    });
-  };
+    })
+    .redirect('/',200,{
 
+    })
+  
+    
+  }
 
 
 
@@ -77,7 +82,7 @@ exports.login = catchAsync(async (req, res, next) => {
   
   exports.logout = (req, res) => {
     res.cookie('jwt', 'loggedout', {
-      expires: new Date(Date.now() + 10 * 1000),
+      expires: new Date(Date.now() + 1),
       httpOnly: true
     });
     res.status(200).json({ status: 'success' });

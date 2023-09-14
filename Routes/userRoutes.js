@@ -7,11 +7,12 @@ const authController = require('./../Controllers/authController')
 router
 .route('/signup')
 .post(authController.signup)
+.get(authController.signup)
 
 router
 .route('/login')
 .post(authController.login)
-
+.get(authController.login)
 
 router
 .route('/logout')

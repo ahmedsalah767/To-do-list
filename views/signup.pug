@@ -1,0 +1,46 @@
+doctype html
+html(lang="en", dir="ltr")
+    head
+      meta(charset="UTF-8")
+      title=title
+      link(rel="stylesheet", href="/styles/signup.css")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    body
+      div(class="container")
+        div(class="title") Registration
+        div(class="title")
+          a(href="/login",class="link") Already Registered?
+        div(class="content")
+          form(class="signup-form")
+            div(class="user-details")
+              div(class="input-box")
+                span(class="details") Full Name
+                input(type="text", placeholder="Enter your name", id="name",name="name" required)
+              div(class="input-box")
+                span(class="details") Email
+                input(type="text", placeholder="Enter your email", id="email",name="email" required)
+              div(class="input-box")
+                span(class="details") Password
+                input(type="password", placeholder="Enter your password",name="password" id="password" required)
+              div(class="input-box")
+                span(class="details") Confirm Password
+                input(type="password", placeholder="Confirm your password",name="passwordConfirm" id="passwordConfirm" required)
+            div(class="gender-details")
+              input#dot-1(type="radio", name="gender")
+              input#dot-2(type="radio", name="gender")
+              input#dot-3(type="radio", name="gender")
+              span(class="gender-title") Gender
+              div(class="category")
+                label(for="dot-1")
+                  span(class="dot one")
+                  span(class="gender") Male
+                label(for="dot-2")
+                  span(class="dot two")
+                  span(class="gender") Female
+                label(for="dot-3")
+                  span(class="dot three")
+                  span(class="gender") Prefer not to say
+            div(class="button")
+              input(type="submit", value="Register")
+            script(src="/dist/bundle.js")
+

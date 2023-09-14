@@ -8,8 +8,11 @@ const Category = require('./../Models/categoryModel')
 
 exports.getCategories = catchAsync(async(req,res,next) => {
 const categories = await Category.find({user: req.user.id }).populate({path: 'tasks'})
-
-res.status(200).json({
+res.status(200)
+.render('categories', {
+    categories
+})
+.json({
     categories
 })
 

@@ -1,0 +1,64 @@
+doctype html
+html(lang="en")
+  head
+      meta(charset="UTF-8")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      // Bootstrap CSS
+      link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+      link(rel="stylesheet", href="/styles/tasks.css")
+      title To-Do List
+      
+  
+  body
+      div(class="header")
+        button(class="logout-btn", onClick="logout()") Logout
+      // Rest of the code...
+      div(class="container py-5")
+        div(class="row mb-4")
+          div(class="col")
+            h1(class="text-center text-white") To-Do List
+        div(class="row mb-4")
+          div(class="col-md-6 offset-md-3")
+            div(class="card p-4 form-bg")
+              form(class="form-tasks")
+                div(class="form-group")
+                  label(for="title") Title
+                  input(type="text", class="form-control", name="title", id="title")
+                div(class="form-group")
+                  label(for="description") Description
+                  textarea(class="form-control", name="description", id="description")
+                div(class="form-group")
+                  label(for="priority") Priority
+                  select(class="form-control", name="pirorety", id="pirorety")
+                    option(value="low") Low
+                    option(value="medium") Medium
+                    option(value="high") High
+                div(class="form-group")
+                  label(for="due-date") Due Date
+                  input(type="date", class="form-control", name="dueDate", id="dueDate")
+                div(class="form-group")
+                  label(for="category") Category
+                  input(type="text", class="form-control", name="category", id="category")
+                div(class="text-center")
+                  button(type="submit", class="btn btn-primary") Add Task
+        div(class="container py-3")
+          div(class="row")
+            div(class="col-md-6 offset-md-3")
+                  a(type="button", class="btn btn-primary", href="/categories")  Get by Categories
+        div(class="row")
+          each task in getTasks
+            div(class="col-md-3")
+              div(class="card p-4 card-bg mb-4")
+                div(class="card-body")
+                  h4(class="card-title")= task.title
+                  p(class="card-text")= task.description
+                  if (task.dueDate)
+                    p(class="card-text")= `due Date: ${task.dueDate.toLocaleDateString()}`
+                  p(class="card-text")= `Task Category: ${task.category.name}`
+                  //-button(type="button", class="btn btn-primary edit-task-btn") Edit
+                  button(type="button", class="btn btn-danger del-task-btn" value=`${task.id}`, name=`${task.id}`)  Delete
+        script(src="/js/bundle.js")
+
+                  
+
+                  

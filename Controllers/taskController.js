@@ -48,8 +48,9 @@ exports.get = catchAsync( async(req,res,next) => {
     
 const getTasks = await Task.find({user: req.user.id, completed: false })
 
-res.status(200).json({
-    getTasks
+res.status(200)
+.json({
+  getTasks
 })
 })
 

@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+  head
+      meta(charset="UTF-8")
+      meta(name="viewport", content="width=device-width, initial-scale=1.i")
+      // Bootstrap CSS
+      link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+      link(rel="stylesheet", href="/styles/tasks.css")
+      title To-Do List
+      
+  body
+      div(class="header")
+        button(class="logout-btn", onClick="logout()") Logout
+      // Rest of the code...
+      div(class="container py-5")
+        div(class="row mb-4")
+          div(class="col")
+            h1(class="text-center text-white") To-Do List
+        
+      each cat in categories
+        - if (cat.tasks.length > 0)
+          div(class="row")
+            div(class="col-md-12")
+              hr
+              h4(class = "cat-title")= cat.name
+          div(class="row")
+            each task in cat.tasks
+              div(class="col-md-3")
+                div(class="card p-4 card-bg mb-4")
+                  div(class="card-body")
+                    h4(class="card-title")= task.title
+                    p(class="card-text")= task.description
+                    if (task.dueDate)
+                      p(class="card-text")= `Due Date: ${task.dueDate.toLocaleDateString()}`
+                    p(class="card-text")= `Task Category: ${cat.name}`
+                    button(type="button", class="btn btn-danger del-task-btn" value=`${task.id}`, name=`${task.id}`)  Delete
+      script(src="/js/bundle.js")
+
+                    
+
+      

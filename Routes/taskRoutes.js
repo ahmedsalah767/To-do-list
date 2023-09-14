@@ -8,6 +8,9 @@ router
 .post(authController.protect, taskController.create)
 .get(authController.protect, taskController.get)
 
+router
+.route('/create')
+.get(authController.protect, taskController.create)
 
 router.route('/:id')
 .delete(authController.protect, taskController.delete)
