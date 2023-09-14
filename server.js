@@ -4,8 +4,9 @@ const mongoose = require('mongoose')
 dotenv.config({ path: './config.env' });
 
 const a = 'mongodb://127.0.0.1:27017/to-do-list'
+const stringmongoo = 'mongodb+srv://ahmed:YVQRYTczhJqgpkkd@to-do.0ogfldk.mongodb.net/?retryWrites=true&w=majority'
 mongoose  
-.connect(a,{ 
+.connect(stringmongoo,{ 
 }).then(con =>{  
   console.log('successful')    
 })
