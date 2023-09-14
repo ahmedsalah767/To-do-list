@@ -5,13 +5,17 @@
 
  each user will have an accout and he could create tasks, the task will be saved to the database linked to his user ID
 
- users could retrieve the tasks based on categories or just chronological order
+ users could retrieve the tasks based on categories or just in chronological order
 
 # Quick Start:
 use this command to install all dependencise:
 
-$npm install
+* $npm install
 
-start the app:
+## start the app:
 
-$node server.js
+* $node server.js
+
+# Screenshoots:
+![screen03](https://github.com/ahmedsalah767/To-do-list/assets/17599538/ae3cbb75-c00d-4552-a956-72d79cee18f1)
+![screen04](https://github.com/ahmedsalah767/To-do-list/assets/17599538/6a39929e-dca0-4695-a7cb-2ace78640f61)
