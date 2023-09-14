@@ -7,6 +7,8 @@
 
  users could retrieve the tasks based on categories or just in chronological order
 
+ users could perform delete operations too
+
 # Quick Start:
 use this command to install all dependencise:
 
