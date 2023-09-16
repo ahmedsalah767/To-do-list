@@ -5,7 +5,7 @@ export const create = async (title, category,description,pirorety,dueDate) => {
     try{
 const res = await axios({
     method: 'POST',
-    url: 'http://localhost:3000/api/tasks',
+    url: '/api/tasks',
     data:{
         title,
         category,
@@ -33,7 +33,7 @@ export const delTask = async (id) => {
     try{
 const res = await axios({
     method: 'DELETE',
-    url: `http://localhost:3000/api/tasks/${id}`,
+    url: `/api/tasks/${id}`,
 
 })
 if(res.data.status === 'success'){

@@ -5995,7 +5995,7 @@ var login = function login(_x, _x2) {
           _context.next = 3;
           return (0, _axios.default)({
             method: 'POST',
-            url: 'http://localhost:3000/api/auth/login',
+            url: '/api/auth/login',
             data: {
               email: email,
               password: password
@@ -6044,7 +6044,7 @@ var logout = function logout() {
           _context2.next = 3;
           return (0, _axios.default)({
             method: 'GET',
-            url: 'http://localhost:3000/api/auth/logout'
+            url: '/api/auth/logout'
           });
 
         case 3:
@@ -6087,7 +6087,7 @@ var signup = function signup(_x3, _x4, _x5, _x6) {
           _context3.next = 3;
           return (0, _axios.default)({
             method: 'POST',
-            url: 'http://localhost:3000/api/auth/signup',
+            url: '/api/auth/signup',
             data: {
               email: email,
               password: password,
@@ -6161,7 +6161,7 @@ var create = function create(_x, _x2, _x3, _x4, _x5) {
           _context.next = 3;
           return (0, _axios.default)({
             method: 'POST',
-            url: 'http://localhost:3000/api/tasks',
+            url: '/api/tasks',
             data: {
               title: title,
               category: category,
@@ -6212,7 +6212,7 @@ var delTask = function delTask(_x6) {
           _context2.next = 3;
           return (0, _axios.default)({
             method: 'DELETE',
-            url: "http://localhost:3000/api/tasks/".concat(id)
+            url: "/api/tasks/".concat(id)
           });
 
         case 3:
@@ -6325,7 +6325,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46705" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42669" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
